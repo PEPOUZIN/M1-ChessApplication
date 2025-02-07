@@ -1,0 +1,39 @@
+services:
+  etl:
+    image: maven:3-openjdk-17
+    #profiles: ["etl"]
+    command: bash -c "mvn clean package && mvn exec:java -Dexec.mainClass="lichess.project.ETL" -Dexec.args="2014-07.pgn" "
+    working_dir: /app
+    volumes:
+      - ./etl/:/app
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/chess
+      DATABASE_USER: will
+      DATABASE_PASSWORD: secret
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16.4
+    #profiles: ["etl"]
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: will 
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: chess
+
+  doxygen:
+    image: greenbone/doxygen:v1.0.0
+    volumes:
+      - ./etl/docs/:/docs
+      - ./etl/src/:/src
+      - ./Doxyfile:/config/Doxyfile
+    command: doxygen config/Doxyfile
+
+volumes:
+  postgres-volume:
+    name: "postgres-volume"

@@ -1,0 +1,82 @@
+.container {
+    --c-bg: hsl(37, 7%, 14%);
+    --c-bg-box: hsl(37, 7%, 14%);
+    --c-bg-high: hsl(37, 7%, 14%);
+    --c-bg-low: hsl(37, 7%, 22%);
+    --c-bg-page: hsl(37, 10%, 8%);
+    --c-bg-zebra: hsl(37, 5%, 19%);
+    --c-bg-zebra2: hsl(37, 5%, 24%);
+    --c-bg-popup: hsl(37, 7%, 22%);
+    --c-bg-header-dropdown: hsl(37, 7%, 22%);
+    --c-bg-input: hsl(37, 10%, 13%);
+    --c-bg-variation: hsl(37, 5%, 15%);
+    --c-header-dropdown: hsl(0, 0%, 73%);
+    --c-body-gradient: hsl(37, 12%, 16%);
+    --c-font: hsl(0, 0%, 73%);
+    --c-primary: hsl(209, 79%, 56%);
+    --c-link: hsl(209, 79%, 56%);
+    --c-over: #fff;
+    --c-brag: hsl(37, 74%, 43%);
+    
+    background: var(--c-bg-page) linear-gradient(to bottom, var(--c-body-gradient), var(--c-bg-page) 116px) no-repeat;
+    color: var(--c-font);
+    font-family: "Noto Sans", Sans-Serif;
+    text-align: start;
+    overflow-x: hidden;
+  }
+  
+  .chess_game_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .chessboard_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .time_container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+  
+  .time_display h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .time_display p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .info_section {
+    margin-left: 20px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+  
+  .info_section h4 {
+    margin: 5px 0;
+  }
+  
+  .info_section p {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+  }
+  
+  .info_section ol {
+    padding: 0 20px;
+    list-style-type: decimal;
+  }
+  
+  .info_section button {
+    margin-top: 10px;
+  }
+  

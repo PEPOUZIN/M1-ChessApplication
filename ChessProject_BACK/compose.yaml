@@ -1,0 +1,61 @@
+services:
+  spring:
+    image: maven:3-openjdk-17
+    #profiles: ["back", "fullstack"]
+    command: bash -c "mvn spring-boot:run"
+    working_dir: /app
+    ports:
+      - 8080:8080
+    networks:
+      default:
+      front-back-net:
+        ipv4_address: 172.69.69.69
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/chess
+      DATABASE_USER: will  
+      DATABASE_PASSWORD: secret  
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16.4
+    #profiles: ["back", "fullstack"]
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      default: 
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: will 
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: chess
+
+ # doxygen:
+  #  image: greenbone/doxygen:v1.0.0
+    #profiles: ["back", "fullstack"]
+   # container_name: doxygen_container
+    #networks:
+     # default: 
+    #volumes:
+     # - ./docs:/docs  
+      #- ./src:/src     
+      #- ./Doxyfile:/config/Doxyfile
+    #command: doxygen config/Doxyfile
+
+networks:
+  default:
+  front-back-net:
+    name: front-back-net
+    driver: bridge 
+    ipam:
+      config:
+        - subnet: 172.69.69.0/24
+          gateway: 172.69.69.1
+
+volumes:
+  postgres-volume:
+    name: "postgres-volume"

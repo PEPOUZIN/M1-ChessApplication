@@ -1,0 +1,52 @@
+# Configuration file for Doxygen
+
+# Input directory (set this to the folder containing your source code)
+INPUT = /src
+
+# Recurse into subdirectories
+RECURSIVE = YES
+
+# File patterns to include
+FILE_PATTERNS = *.java
+
+# Output directory (set this to where you want the generated documentation)
+OUTPUT_DIRECTORY = /docs
+
+# Generate HTML output
+GENERATE_HTML = YES
+
+# Generate LaTeX output (optional, depending on your needs)
+GENERATE_LATEX = NO
+
+# Quiet mode (turns off unnecessary output messages)
+QUIET = NO
+
+# Warnings (turn on if you want detailed warning messages)
+WARNINGS = YES
+
+# Enable documentation for private members
+EXTRACT_PRIVATE = YES
+
+# Enable documentation for protected members
+EXTRACT_PROTECTED = YES
+
+# Enable documentation for all functions and members
+EXTRACT_ALL = YES
+
+# Enable grouping of classes
+CLASS_DIAGRAMS = YES
+
+# Enable member diagrams (to visualize members in classes)
+MEMBER_GRAPH = YES
+
+# Enable file graphs (show relations between files)
+FILE_GRAPH = YES
+
+# Enable dot for class and file diagrams (if you want graphical representations)
+HAVE_DOT = YES
+
+# Enable diagrams generation (requires Graphviz)
+DOT_IMAGE_FORMAT = png
+
+# Set the maximum number of classes in a group
+MAX_INITIALIZER_LINES = 20

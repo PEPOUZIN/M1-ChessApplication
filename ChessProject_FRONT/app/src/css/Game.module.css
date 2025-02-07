@@ -1,0 +1,30 @@
+.chess_game_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+.chessboard_section {
+    display: "flex";
+    flex-direction: "column";
+    align-items: "center";
+}
+
+.closeRoom {
+    margin-top: "20px";
+}
+
+.joueurs {
+    width: "250px";
+    margin-left: "20px";
+}
+
+.info_section {
+    max-height: "300px";
+    margin-left: 20px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    overflow-y: "auto";
+}
